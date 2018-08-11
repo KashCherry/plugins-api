@@ -318,3 +318,10 @@ int AMXAPI amx_UTF8Put(char *string, char **endptr, int maxchars, cell value)
 	amx_UTF8Put_t fn = ((amx_UTF8Put_t*)pAMXFunctions)[PLUGIN_AMX_EXPORT_UTF8Put];
 	return fn(string, endptr, maxchars, value);
 }
+
+typedef int  AMXAPI (*amx_HookNative_t)(AMX *amx, const char *name, void *address);
+int AMXAPI amx_HookNative(AMX *amx, const char *name, void *address)
+{
+	amx_HookNative_t fn = ((amx_HookNative_t*)pAMXFunctions)[PLUGIN_AMX_EXPORT_HookNative];
+	return fn(amx, name, address);
+}
