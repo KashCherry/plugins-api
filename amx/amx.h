@@ -408,6 +408,7 @@ int AMXAPI amx_UTF8Check(const char *string, int *length);
 int AMXAPI amx_UTF8Get(const char *string, const char **endptr, cell *value);
 int AMXAPI amx_UTF8Len(const cell *cstr, int *length);
 int AMXAPI amx_UTF8Put(char *string, char **endptr, int maxchars, cell value);
+int AMXAPI amx_HookNative(AMX *amx, const char *name, void *address);
 
 #if PAWN_CELL_SIZE==16
   #define amx_AlignCell(v) amx_Align16(v)
